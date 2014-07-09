@@ -7,6 +7,8 @@
 //
 
 #import "GFViewController.h"
+#import "AFHTTPRequestOperationManager.h"
+
 
 @interface GFViewController ()
 
@@ -37,6 +39,19 @@
         NSString *latitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         
         NSLog(@"long: %@, lat: %@", longitude, latitude);
+        
+        
+        // Accessing GoodFood API
+        NSString *strURL = [NSString stringWithFormat:@"http://goodfoodwdi.herokuapp.com/results.json?lat=%@&lng=%@", latitude, longitude]; // change screen value
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+        [manager GET:strURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"PULLED FROM GoodFood: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
     }
     
     [locationManager stopUpdatingLocation];
