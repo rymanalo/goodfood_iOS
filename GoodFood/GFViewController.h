@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface GFViewController : UIViewController
+
+@interface GFViewController : UIViewController <CLLocationManagerDelegate>
 
 @end
