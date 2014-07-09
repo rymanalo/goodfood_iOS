@@ -10,6 +10,12 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface GFViewController : UIViewController <CLLocationManagerDelegate>
 
+@interface GFViewController : UIViewController <CLLocationManagerDelegate> {
+    
+    NSMutableArray *goodFoodData;
+    
+}
+
+@property (nonatomic, retain) NSMutableArray *goodFoodData;
 @end

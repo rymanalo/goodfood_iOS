@@ -8,6 +8,7 @@
 
 #import "GFViewController.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "GFTableViewController.h"
 
 
 @interface GFViewController ()
@@ -19,6 +20,11 @@
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
 }
+@synthesize goodFoodData;
+
+
+
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -48,7 +54,21 @@
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
         [manager GET:strURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
-            NSLog(@"PULLED FROM GoodFood: %@", responseObject);
+            
+            self.goodFoodData = responseObject;
+            
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+            
+            GFTableViewController *tableView = (GFTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"table"];
+            
+            
+            [tableView setGoodFoodData:self.goodFoodData];
+            
+            
+            [self.navigationController pushViewController:tableView animated:YES];
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
