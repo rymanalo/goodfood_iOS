@@ -14,14 +14,13 @@
 @synthesize photoImageView;
 @synthesize phoneButton;
 
-
 - (IBAction)addressButtonPushed:(id)sender {
     // Look up address
 }
 
 
 - (IBAction)phoneButtonPushed:(UIButton *)sender {
-    // Call Number
+    // Call Phone number
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

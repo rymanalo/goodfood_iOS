@@ -8,6 +8,8 @@
 
 #import "GFTableViewController.h"
 #import "GFViewController.h"
+#import "GFTableViewCell.h"
+
 
 @interface GFTableViewController ()
 
@@ -18,37 +20,36 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *simpleTableIdentifier = @"goodFoodTableCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    GFTableViewCell *cell = (GFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"goodFoodTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    cell.textLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
-    
-    
-    
+    cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
     NSURL *imageURL = [NSURL URLWithString:[self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"]];
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-            // Update the UI
-            cell.imageView.image = [UIImage imageWithData:imageData];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    cell.photoImageView.image = [UIImage imageWithData:imageData];
 
-//        });
-//    });
-    
+    cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"address"];
+        
+    [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
+    cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.goodFoodData count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 150;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -70,7 +71,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"was able to load the data %@", self.goodFoodData[0]);
+    NSLog(@"was able to load the data %@", self.goodFoodData);
     // Do any additional setup after loading the view.
     _goodFoodTable.delegate = self;
     _goodFoodTable.dataSource = self;

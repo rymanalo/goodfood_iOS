@@ -38,21 +38,14 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="addressButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="LXz-5W-Bnl"/>
+                            <action selector="addressButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="8Nt-Hh-cT9"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-Ff-fMy">
-                        <rect key="frame" x="10" y="95" width="160" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-Ff-fMy">
+                        <rect key="frame" x="10" y="95" width="160" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Phone">
-                                    <attributes>
-                                        <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                        </state>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <state key="normal" title="8888888888"/>
                         <connections>
                             <action selector="phoneButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="YII-Kh-mEh"/>
                         </connections>
