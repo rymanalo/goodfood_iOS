@@ -23,6 +23,7 @@
 		83C17D93196CBF1200F7ECB9 /* GoodFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C17D92196CBF1200F7ECB9 /* GoodFoodTests.m */; };
 		83C17D9D196CBF3000F7ECB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C17D9C196CBF3000F7ECB9 /* CoreLocation.framework */; };
 		83C5941C196CFE2100244955 /* GFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C5941B196CFE2100244955 /* GFTableViewController.m */; };
+		83DF692E19820C4D0060C8DB /* goodFoodTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83DF692D19820C4D0060C8DB /* goodFoodTableCell.xib */; };
 		C7DA07FB07544207AFCCDB6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25211DAD25EF49FFA76D57EC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		83C17D9C196CBF3000F7ECB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		83C5941A196CFE2100244955 /* GFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFTableViewController.h; sourceTree = "<group>"; };
 		83C5941B196CFE2100244955 /* GFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFTableViewController.m; sourceTree = "<group>"; };
+		83DF692D19820C4D0060C8DB /* goodFoodTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = goodFoodTableCell.xib; sourceTree = "<group>"; };
 		D3A39EF603BA4F7BA6A36A0D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 				83C17D7D196CBF1100F7ECB9 /* GFViewController.m */,
 				83C5941A196CFE2100244955 /* GFTableViewController.h */,
 				83C5941B196CFE2100244955 /* GFTableViewController.m */,
+				83DF692D19820C4D0060C8DB /* goodFoodTableCell.xib */,
 				83C17D7F196CBF1200F7ECB9 /* Images.xcassets */,
 				83C17D6E196CBF1100F7ECB9 /* Supporting Files */,
 			);
@@ -249,6 +252,7 @@
 				83C17D80196CBF1200F7ECB9 /* Images.xcassets in Resources */,
 				83C17D72196CBF1100F7ECB9 /* InfoPlist.strings in Resources */,
 				83C17D7B196CBF1100F7ECB9 /* Main.storyboard in Resources */,
+				83DF692E19820C4D0060C8DB /* goodFoodTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
