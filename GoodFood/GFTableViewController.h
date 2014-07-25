@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFTableViewController : UIViewController {
+@interface GFTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
     
     NSMutableArray *goodFoodData;
 }
 
 @property (nonatomic , retain) NSMutableArray *goodFoodData;
-@property (weak, nonatomic) IBOutlet UITextView *test;
+@property (weak, nonatomic) IBOutlet UITableView *goodFoodTable;
 @end

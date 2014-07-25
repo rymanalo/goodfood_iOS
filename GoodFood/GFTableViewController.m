@@ -16,11 +16,46 @@
 @implementation GFTableViewController
 @synthesize goodFoodData;
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
+    
+    
+    
+    
+    NSURL *imageURL = [NSURL URLWithString:[self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"]];
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            cell.imageView.image = [UIImage imageWithData:imageData];
+
+//        });
+//    });
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.goodFoodData count];
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    [self.test setText:[NSString stringWithFormat:@"%@", self.goodFoodData[0][@"name"]]];
+//    [self.test setText:[NSString stringWithFormat:@"%@", self.goodFoodData[0][@"name"]]];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,6 +72,9 @@
     [super viewDidLoad];
     NSLog(@"was able to load the data %@", self.goodFoodData[0]);
     // Do any additional setup after loading the view.
+    _goodFoodTable.delegate = self;
+    _goodFoodTable.dataSource = self;
+    _goodFoodTable.scrollEnabled = YES;
 }
 
 - (void)didReceiveMemoryWarning
