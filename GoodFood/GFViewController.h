@@ -18,4 +18,5 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *goodFoodData;
+@property (weak, nonatomic) IBOutlet UIButton *goodFoodButton;
 @end

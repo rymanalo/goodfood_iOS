@@ -30,6 +30,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="WET-eX-bAM"/>
+                    <connections>
+                        <outlet property="goodFoodButton" destination="rOy-6M-neG" id="Fv8-Y8-KLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

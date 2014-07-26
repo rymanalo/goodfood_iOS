@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AnimatedGif (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - AnimatedGif
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  AnimatedGif: 02960d34d11eb52a154fbf876ebc584a0fe26442
 
 COCOAPODS: 0.32.1

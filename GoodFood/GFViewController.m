@@ -9,10 +9,11 @@
 #import "GFViewController.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "GFTableViewController.h"
+#import "AnimatedGif.h"
 
 
 @interface GFViewController ()
-
+@property (strong, nonatomic) UIImageView *loading;
 @end
 
 @implementation GFViewController{
@@ -49,6 +50,10 @@
         
         // Accessing GoodFood API
         NSString *strURL = [NSString stringWithFormat:@"http://goodfoodwdi.herokuapp.com/results.json?lat=%@&lng=%@", latitude, longitude]; // change screen value
+        
+        
+        _loading.hidden = NO;
+        _goodFoodButton.hidden = YES;
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -110,6 +115,20 @@
     
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
+    
+    NSURL *localUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"]];
+    _loading = [AnimatedGif getAnimationForGifAtUrl: localUrl];
+    
+    _loading.frame = CGRectMake(self.view.center.x - 23, self.view.center.y - 23, _loading.image.size.width, _loading.image.size.height);
+    [self.view addSubview:_loading];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    _loading.hidden = YES;
+    _goodFoodButton.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-AnimatedGif.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E51C3D78EBD452FAD4E8EAC</key>
+		<key>4FFF6B047C004EC5BDE60361</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2B63D08702C492D953D2778</key>
+		<key>BBAA75EB0D6E446384472D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8384752AC47477CB3366952</key>
 		<dict>
 			<key>primary</key>
 			<true/>

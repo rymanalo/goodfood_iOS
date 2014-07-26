@@ -48,3 +48,9 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// AnimatedGif
+#define COCOAPODS_POD_AVAILABLE_AnimatedGif
+#define COCOAPODS_VERSION_MAJOR_AnimatedGif 0
+#define COCOAPODS_VERSION_MINOR_AnimatedGif 1
+#define COCOAPODS_VERSION_PATCH_AnimatedGif 1
+
