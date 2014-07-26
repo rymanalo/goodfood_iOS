@@ -33,6 +33,9 @@
 
 - (IBAction)phoneButtonPushed:(UIButton *)sender {
     // Call Phone number
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.phoneButton.titleLabel.text]]];
+
     NSLog(@"button phone #: %@", self.phoneButton.titleLabel.text);
 }
 
