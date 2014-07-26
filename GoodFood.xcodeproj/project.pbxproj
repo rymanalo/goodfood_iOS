@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830240D819835E6700D3C595 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830240D719835E6700D3C595 /* MapKit.framework */; };
 		83C17D68196CBF1100F7ECB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C17D67196CBF1100F7ECB9 /* Foundation.framework */; };
 		83C17D6A196CBF1100F7ECB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C17D69196CBF1100F7ECB9 /* CoreGraphics.framework */; };
 		83C17D6C196CBF1100F7ECB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C17D6B196CBF1100F7ECB9 /* UIKit.framework */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		25211DAD25EF49FFA76D57EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		830240D719835E6700D3C595 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83C17D64196CBF1100F7ECB9 /* GoodFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C17D67196CBF1100F7ECB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83C17D69196CBF1100F7ECB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830240D819835E6700D3C595 /* MapKit.framework in Frameworks */,
 				83C17D9D196CBF3000F7ECB9 /* CoreLocation.framework in Frameworks */,
 				83C17D6A196CBF1100F7ECB9 /* CoreGraphics.framework in Frameworks */,
 				83C17D6C196CBF1100F7ECB9 /* UIKit.framework in Frameworks */,
@@ -117,6 +120,7 @@
 		83C17D66196CBF1100F7ECB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				830240D719835E6700D3C595 /* MapKit.framework */,
 				83C17D9C196CBF3000F7ECB9 /* CoreLocation.framework */,
 				83C17D67196CBF1100F7ECB9 /* Foundation.framework */,
 				83C17D69196CBF1100F7ECB9 /* CoreGraphics.framework */,

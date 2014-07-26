@@ -37,6 +37,8 @@
     [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
     cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
+    cell.addressButton.titleLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
+    
     NSString *photo_url = [self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"];
     
     NSString *identifier = [NSString stringWithFormat:@"Cell%i", indexPath.row];

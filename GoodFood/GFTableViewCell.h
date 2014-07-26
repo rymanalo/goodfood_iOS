@@ -13,4 +13,5 @@
 @property (nonatomic, weak) IBOutlet UILabel *addressLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, weak) IBOutlet UIButton *phoneButton;
+@property (nonatomic, weak) IBOutlet UIButton *addressButton;
 @end
