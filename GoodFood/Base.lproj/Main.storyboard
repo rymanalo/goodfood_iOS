@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - GoodFood-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="GFViewController" sceneMemberID="viewController">
@@ -17,9 +17,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-6M-neG">
-                                <rect key="frame" x="123" y="269" width="74" height="30"/>
+                                <rect key="frame" x="85" y="269" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GoodFood">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Find Good Food">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -29,7 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WET-eX-bAM"/>
+                    <navigationItem key="navigationItem" title="GoodFood" id="WET-eX-bAM"/>
                     <connections>
                         <outlet property="goodFoodButton" destination="rOy-6M-neG" id="Fv8-Y8-KLV"/>
                     </connections>
@@ -38,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="1333" y="-12"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Results-->
         <scene sceneID="lC5-jL-0hh">
             <objects>
                 <viewController storyboardIdentifier="table" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wd0-eo-7Kd" customClass="GFTableViewController" sceneMemberID="viewController">
@@ -66,7 +67,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="R4e-E7-fAk"/>
+                    <navigationItem key="navigationItem" title="Results" id="R4e-E7-fAk"/>
                     <connections>
                         <outlet property="goodFoodTable" destination="SW8-AW-q3r" id="eoY-ma-XUQ"/>
                     </connections>
