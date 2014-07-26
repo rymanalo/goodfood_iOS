@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOI-gn-UEl">
-                        <rect key="frame" x="10" y="5" width="240" height="20"/>
+                        <rect key="frame" x="10" y="5" width="231" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.9137254901960784" green="0.55294117647058827" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
@@ -23,12 +23,12 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="R9d-w9-qDz">
                         <rect key="frame" x="10" y="33" width="186" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd7-J8-Cq6">
-                        <rect key="frame" x="209" y="35" width="90" height="90"/>
+                        <rect key="frame" x="220" y="35" width="90" height="90"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sO-EX-iwT">
@@ -51,12 +51,20 @@
                             <action selector="phoneButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="YII-Kh-mEh"/>
                         </connections>
                     </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-Sq-jWh">
+                        <rect key="frame" x="249" y="6" width="61" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressButton" destination="1sO-EX-iwT" id="snP-Lt-YvQ"/>
                 <outlet property="addressLabel" destination="R9d-w9-qDz" id="Tju-NM-aKH"/>
                 <outlet property="nameLabel" destination="TOI-gn-UEl" id="rJi-Jc-UyQ"/>
+                <outlet property="openLabel" destination="Q3U-Sq-jWh" id="Yco-le-Nok"/>
                 <outlet property="phoneButton" destination="zTq-Ff-fMy" id="Kjr-6T-VIb"/>
                 <outlet property="photoImageView" destination="nd7-J8-Cq6" id="b1U-ux-jpy"/>
             </connections>
