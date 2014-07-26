@@ -38,16 +38,16 @@
     cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
     cell.addressButton.titleLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
-    
-    if ([[self.goodFoodData objectAtIndex:indexPath.row][@"open"] isEqualToString:@"1"]) {
-        cell.openLabel.textColor = [UIColor colorWithRed:49.0f/255.0f green:199.0f/255.0f blue:49.0f/255.0f alpha:1.0f];
-        cell.openLabel.text = @"OPEN";
-    } else if ([[self.goodFoodData objectAtIndex:indexPath.row][@"open"] isEqualToString:@"0"]){
-        cell.openLabel.textColor = [UIColor colorWithRed:235.0f/255.0f green:30.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
-        cell.openLabel.text = @"CLOSED";
-    } else {
+
+    if ([[NSString stringWithFormat:@"%@", [self.goodFoodData objectAtIndex:indexPath.row][@"open"]] isEqualToString:@"Not available"]) {
         cell.openLabel.textColor = [UIColor colorWithRed:235.0f/255.0f green:30.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
         cell.openLabel.text = @"N/A";
+    } else if ([[self.goodFoodData objectAtIndex:indexPath.row][@"open"] intValue] == 0) {
+        cell.openLabel.textColor = [UIColor colorWithRed:235.0f/255.0f green:30.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
+        cell.openLabel.text = @"CLOSED";
+    } else if ([[self.goodFoodData objectAtIndex:indexPath.row][@"open"] intValue] == 1) {
+        cell.openLabel.textColor = [UIColor colorWithRed:49.0f/255.0f green:199.0f/255.0f blue:49.0f/255.0f alpha:1.0f];
+        cell.openLabel.text = @"OPEN";
     }
     
     
