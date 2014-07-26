@@ -12,6 +12,7 @@
 
 
 @interface GFTableViewController ()
+@property (strong ,nonatomic) NSMutableDictionary *cachedImages;
 
 @end
 
@@ -31,14 +32,46 @@
     
     cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
-    NSURL *imageURL = [NSURL URLWithString:[self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"]];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    cell.photoImageView.image = [UIImage imageWithData:imageData];
-
     cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"address"];
         
     [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
     cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    
+    NSString *photo_url = [self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"];
+    
+    NSString *identifier = [NSString stringWithFormat:@"Cell%i", indexPath.row];
+    if([self.cachedImages objectForKey:identifier] != nil){
+        cell.photoImageView.image = [self.cachedImages valueForKey:identifier];
+    }else{
+        
+        char const * s = [identifier  UTF8String];
+        dispatch_queue_t queue = dispatch_queue_create(s, 0);
+        
+        dispatch_async(queue, ^{
+            
+            NSURL *imageURL = [NSURL URLWithString:photo_url];
+            
+            NSData *imageData = [NSData alloc];
+            if ([photo_url isEqualToString:@"nophoto.png"]) {
+                imageData = UIImagePNGRepresentation([UIImage imageNamed:photo_url]);
+            } else {
+                imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
+            }
+            
+            UIImage *img = nil;
+            img = [[UIImage alloc] initWithData:imageData];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if ([tableView indexPathForCell:cell].row == indexPath.row) {
+                    [self.cachedImages setValue:img forKey:identifier];
+                    cell.photoImageView.image = [self.cachedImages valueForKey:identifier];
+                }
+            });
+        });
+    }
+    
+    
     return cell;
 }
 
@@ -76,6 +109,8 @@
     _goodFoodTable.delegate = self;
     _goodFoodTable.dataSource = self;
     _goodFoodTable.scrollEnabled = YES;
+    
+    self.cachedImages = [[NSMutableDictionary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
