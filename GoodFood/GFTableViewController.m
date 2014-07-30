@@ -86,6 +86,11 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    UIView* separatorBottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 149, 320, 1)];
+    separatorBottomLineView.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f];
+    [cell.contentView addSubview:separatorBottomLineView];
+    
     return cell;
 }
 
