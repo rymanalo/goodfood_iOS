@@ -10,6 +10,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "GFTableViewController.h"
 #import "AnimatedGif.h"
+#import <iAd/iAd.h>
 
 
 @interface GFViewController ()
@@ -54,6 +55,9 @@
         
         _loading.hidden = NO;
         _goodFoodButton.hidden = YES;
+        
+        
+
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -101,6 +105,14 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *destination = [segue destinationViewController];
+    
+    destination.interstitialPresentationPolicy =
+    ADInterstitialPresentationPolicyAutomatic;
+}
+
 - (IBAction)getCurrentLocation:(id)sender {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -121,6 +133,8 @@
     
     _loading.frame = CGRectMake(self.view.center.x - 23, self.view.center.y - 23, _loading.image.size.width, _loading.image.size.height);
     [self.view addSubview:_loading];
+    
+    self.canDisplayBannerAds = YES;
 
 }
 
