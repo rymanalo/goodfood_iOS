@@ -32,7 +32,13 @@
     
     cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
-    cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"address"];
+    NSArray *addressWords = [[self.goodFoodData objectAtIndex:indexPath.row][@"address"] componentsSeparatedByString:@" "];
+    
+    if ([addressWords[0] isEqualToString:@"Not"]) {
+        cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
+    } else {
+        cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"address"];
+    }
         
     [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
     cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
