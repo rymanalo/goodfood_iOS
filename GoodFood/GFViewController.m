@@ -132,6 +132,7 @@
     _loading = [AnimatedGif getAnimationForGifAtUrl: localUrl];
     
     _loading.frame = CGRectMake(self.view.center.x - 23, self.view.center.y - 23, _loading.image.size.width, _loading.image.size.height);
+    _loading.alpha = 0.33;
     [self.view addSubview:_loading];
     
     self.canDisplayBannerAds = YES;
