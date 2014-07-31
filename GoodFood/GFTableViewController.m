@@ -32,12 +32,12 @@
     
     cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
-    NSArray *addressWords = [[self.goodFoodData objectAtIndex:indexPath.row][@"address"] componentsSeparatedByString:@" "];
+    NSArray *addressWords = [[self.goodFoodData objectAtIndex:indexPath.row][@"address"] componentsSeparatedByString:@","];
     
-    if ([addressWords[0] isEqualToString:@"Not"]) {
+    if ([addressWords[0] isEqualToString:@"Not available"]) {
         cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
     } else {
-        cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"address"];
+        cell.addressLabel.text = [NSString stringWithFormat:@" %@,\n%@,%@", addressWords[0], addressWords[1], addressWords[2]];
     }
         
     [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
