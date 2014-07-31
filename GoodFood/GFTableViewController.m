@@ -32,6 +32,8 @@
     
     cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
+    cell.categoriesLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"categories"];
+    
     NSArray *addressWords = [[self.goodFoodData objectAtIndex:indexPath.row][@"address"] componentsSeparatedByString:@","];
     
     if ([addressWords[0] isEqualToString:@"Not available"]) {

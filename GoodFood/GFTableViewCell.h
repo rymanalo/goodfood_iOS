@@ -15,4 +15,5 @@
 @property (nonatomic, weak) IBOutlet UIButton *phoneButton;
 @property (nonatomic, weak) IBOutlet UIButton *addressButton;
 @property (weak, nonatomic) IBOutlet UILabel *openLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoriesLabel;
 @end
