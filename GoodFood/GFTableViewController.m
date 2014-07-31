@@ -59,7 +59,7 @@
     
     NSString *photo_url = [self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"];
     
-    NSString *identifier = [NSString stringWithFormat:@"Cell%i", indexPath.row];
+    NSString *identifier = [NSString stringWithFormat:@"Cell%i", (int)indexPath.row];
     if([self.cachedImages objectForKey:identifier] != nil){
         cell.photoImageView.image = [self.cachedImages valueForKey:identifier];
     }else{
@@ -134,6 +134,7 @@
     _goodFoodTable.delegate = self;
     _goodFoodTable.dataSource = self;
     _goodFoodTable.scrollEnabled = YES;
+    _goodFoodTable.backgroundColor = [UIColor colorWithRed:246.0/255.0f green:246.0/255.0f blue:246.0/255.0f alpha:1.0f];
     
     self.cachedImages = [[NSMutableDictionary alloc] init];
 }
