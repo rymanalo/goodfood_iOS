@@ -94,13 +94,13 @@
     }
     
     if ([self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"]) {
-        [cell.yelpRatingButton setTitle:[[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"] stringValue] forState:UIControlStateNormal];
-        cell.yelpRatingButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [cell.yelpRatingButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_url"] forState:UIControlStateNormal];
+        cell.yelpRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"] stringValue];
     }
 
     if ([self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] != (id)[NSNull null]) {
-        [cell.googlePlacesRatingButton setTitle:[[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue] forState:UIControlStateNormal];
-        cell.googlePlacesRatingButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [cell.googlePlacesRatingButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"google_places_url"]  forState:UIControlStateNormal];
+        cell.googlePlacesRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue];
     }
 
     

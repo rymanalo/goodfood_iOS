@@ -65,19 +65,49 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-GN-4m1">
-                        <rect key="frame" x="162" y="124" width="38" height="20"/>
+                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yelp" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-To-ucz">
+                        <rect key="frame" x="110" y="124" width="15" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" backgroundImage="google">
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-tG-9mI">
+                        <rect key="frame" x="162" y="124" width="13" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="n/a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-Ke-CXS">
+                        <rect key="frame" x="180" y="124" width="25" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="n/a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hen-BO-wws">
+                        <rect key="frame" x="129" y="124" width="25" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-GN-4m1">
+                        <rect key="frame" x="162" y="124" width="43" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="googlePlacesRatingButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="8f1-GP-AN2"/>
+                        </connections>
                     </button>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rs-n5-711">
-                        <rect key="frame" x="102" y="124" width="42" height="20"/>
+                        <rect key="frame" x="110" y="124" width="42" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" backgroundImage="yelp">
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="yelpRatingButtonPushed:" destination="rA1-JV-qcs" eventType="touchUpInside" id="5ae-uD-D2t"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,11 +116,13 @@
                 <outlet property="addressButton" destination="1sO-EX-iwT" id="snP-Lt-YvQ"/>
                 <outlet property="addressLabel" destination="R9d-w9-qDz" id="Tju-NM-aKH"/>
                 <outlet property="categoriesLabel" destination="vhG-hB-K9Y" id="ku9-86-0wA"/>
+                <outlet property="googlePlacesRating" destination="cR9-Ke-CXS" id="Qwi-bb-1NG"/>
                 <outlet property="googlePlacesRatingButton" destination="zF5-GN-4m1" id="2XF-Dn-Sc9"/>
                 <outlet property="nameLabel" destination="TOI-gn-UEl" id="rJi-Jc-UyQ"/>
                 <outlet property="openLabel" destination="Q3U-Sq-jWh" id="Yco-le-Nok"/>
                 <outlet property="phoneButton" destination="zTq-Ff-fMy" id="Kjr-6T-VIb"/>
                 <outlet property="photoImageView" destination="nd7-J8-Cq6" id="b1U-ux-jpy"/>
+                <outlet property="yelpRating" destination="hen-BO-wws" id="QaL-uS-aSR"/>
                 <outlet property="yelpRatingButton" destination="1rs-n5-711" id="1Kk-u6-64u"/>
             </connections>
         </tableViewCell>
@@ -104,7 +136,7 @@
         </button>
     </objects>
     <resources>
-        <image name="google" width="628" height="332"/>
+        <image name="google" width="215" height="332"/>
         <image name="yelp" width="629" height="300"/>
     </resources>
 </document>

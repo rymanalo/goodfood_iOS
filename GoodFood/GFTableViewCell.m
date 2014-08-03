@@ -15,6 +15,14 @@
 @synthesize photoImageView;
 @synthesize phoneButton;
 
+- (IBAction)yelpRatingButtonPushed:(id)sender {
+    NSLog(@"yelp pushed");
+}
+
+- (IBAction)googlePlacesRatingButtonPushed:(id)sender {
+    NSLog(@"google pushed");
+}
+
 - (IBAction)addressButtonPushed:(id)sender {
     // Look up address
     

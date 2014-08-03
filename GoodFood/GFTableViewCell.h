@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoriesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *yelpRatingButton;
 @property (weak, nonatomic) IBOutlet UIButton *googlePlacesRatingButton;
+@property (weak, nonatomic) IBOutlet UILabel *yelpRating;
+@property (weak, nonatomic) IBOutlet UILabel *googlePlacesRating;
 @end
