@@ -103,6 +103,7 @@
         cell.googlePlacesRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue];
     }
 
+    cell.reviewCountLabel.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"review_count"] stringValue];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
