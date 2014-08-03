@@ -93,6 +93,17 @@
         });
     }
     
+    if ([self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"]) {
+        [cell.yelpRatingButton setTitle:[[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"] stringValue] forState:UIControlStateNormal];
+        cell.yelpRatingButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    }
+
+    if ([self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] != (id)[NSNull null]) {
+        [cell.googlePlacesRatingButton setTitle:[[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue] forState:UIControlStateNormal];
+        cell.googlePlacesRatingButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    }
+
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UIView* separatorBottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 149, 320, 1)];

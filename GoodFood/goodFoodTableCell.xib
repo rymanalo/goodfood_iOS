@@ -65,6 +65,20 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-GN-4m1">
+                        <rect key="frame" x="162" y="124" width="38" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" backgroundImage="google">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rs-n5-711">
+                        <rect key="frame" x="102" y="124" width="42" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" backgroundImage="yelp">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
@@ -72,11 +86,25 @@
                 <outlet property="addressButton" destination="1sO-EX-iwT" id="snP-Lt-YvQ"/>
                 <outlet property="addressLabel" destination="R9d-w9-qDz" id="Tju-NM-aKH"/>
                 <outlet property="categoriesLabel" destination="vhG-hB-K9Y" id="ku9-86-0wA"/>
+                <outlet property="googlePlacesRatingButton" destination="zF5-GN-4m1" id="2XF-Dn-Sc9"/>
                 <outlet property="nameLabel" destination="TOI-gn-UEl" id="rJi-Jc-UyQ"/>
                 <outlet property="openLabel" destination="Q3U-Sq-jWh" id="Yco-le-Nok"/>
                 <outlet property="phoneButton" destination="zTq-Ff-fMy" id="Kjr-6T-VIb"/>
                 <outlet property="photoImageView" destination="nd7-J8-Cq6" id="b1U-ux-jpy"/>
+                <outlet property="yelpRatingButton" destination="1rs-n5-711" id="1Kk-u6-64u"/>
             </connections>
         </tableViewCell>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="loL-NU-khp">
+            <rect key="frame" x="0.0" y="0.0" width="73" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+            <state key="normal" title="Button">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+        </button>
     </objects>
+    <resources>
+        <image name="google" width="628" height="332"/>
+        <image name="yelp" width="629" height="300"/>
+    </resources>
 </document>
