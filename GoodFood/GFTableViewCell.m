@@ -15,12 +15,25 @@
 @synthesize photoImageView;
 @synthesize phoneButton;
 
+
+
+- (BOOL)isYelpInstalled {
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"yelp5.3:"]];
+}
+
 - (IBAction)yelpRatingButtonPushed:(id)sender {
-    NSLog(@"yelp pushed");
+    if ([self isYelpInstalled]) {
+        // Call into the Yelp app
+        NSArray *yelpBiz = [self.yelpRatingButton.titleLabel.text componentsSeparatedByString:@"/"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"yelp5.3:///biz/%@", yelpBiz[4]]]];
+    } else {
+        // Use the Yelp touch site
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.yelpRatingButton.titleLabel.text]];
+    }
 }
 
 - (IBAction)googlePlacesRatingButtonPushed:(id)sender {
-    NSLog(@"google pushed");
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.googlePlacesRatingButton.titleLabel.text]];
 }
 
 - (IBAction)addressButtonPushed:(id)sender {
