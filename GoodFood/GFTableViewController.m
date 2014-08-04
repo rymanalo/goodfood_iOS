@@ -30,10 +30,14 @@
         cell = [nib objectAtIndex:0];
     }
     
+    // Restaurant name
     cell.nameLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"name"];
     
+    // Yelp categories
     cell.categoriesLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"categories"];
     
+    
+    // If address is available, nicely print out in label
     NSArray *addressWords = [[self.goodFoodData objectAtIndex:indexPath.row][@"address"] componentsSeparatedByString:@","];
     
     if ([addressWords[0] isEqualToString:@"Not available"]) {
@@ -41,12 +45,18 @@
     } else {
         cell.addressLabel.text = [NSString stringWithFormat:@" %@,\n%@,%@", addressWords[0], addressWords[1], addressWords[2]];
     }
-        
+    
+    
+    // Restaurant phone number
     [cell.phoneButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"phone"] forState:UIControlStateNormal];
     cell.phoneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
+    
+    // Hide coordines in button title.
     cell.addressButton.titleLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
 
+    
+    // Display whether or not the retsaurant is open.
     if ([[NSString stringWithFormat:@"%@", [self.goodFoodData objectAtIndex:indexPath.row][@"open"]] isEqualToString:@"Not available"]) {
         cell.openLabel.textColor = [UIColor colorWithRed:235.0f/255.0f green:30.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
         cell.openLabel.text = @"N/A";
@@ -58,7 +68,7 @@
         cell.openLabel.text = @"OPEN";
     }
     
-    
+    // First photo from Google Places if available. Cache the photos to be able to load pictures faster when scrolling through the table.
     NSString *photo_url = [self.goodFoodData objectAtIndex:indexPath.row][@"photo_url"];
     
     NSString *identifier = [NSString stringWithFormat:@"Cell%i", (int)indexPath.row];
@@ -93,16 +103,19 @@
         });
     }
     
+    // Yelp rating
     if ([self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"]) {
         [cell.yelpRatingButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_url"] forState:UIControlStateNormal];
         cell.yelpRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"yelp_rating"] stringValue];
     }
 
+    // Google Places rating (if available)
     if ([self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] != (id)[NSNull null]) {
         [cell.googlePlacesRatingButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"google_places_url"]  forState:UIControlStateNormal];
         cell.googlePlacesRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue];
     }
 
+    // Total Yelp reviews
     cell.reviewCountLabel.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"review_count"] stringValue];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -127,7 +140,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-//    [self.test setText:[NSString stringWithFormat:@"%@", self.goodFoodData[0][@"name"]]];
     
 }
 
