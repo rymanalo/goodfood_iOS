@@ -22,6 +22,7 @@
 }
 
 - (IBAction)yelpRatingButtonPushed:(id)sender {
+    // Look up restaurant's Yelp page in Yelp App if available. In Safari if not available
     if ([self isYelpInstalled]) {
         // Call into the Yelp app
         NSArray *yelpBiz = [self.yelpRatingButton.titleLabel.text componentsSeparatedByString:@"/"];
@@ -33,11 +34,12 @@
 }
 
 - (IBAction)googlePlacesRatingButtonPushed:(id)sender {
+    // Look up restaurant's Google Places page in Safari.
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.googlePlacesRatingButton.titleLabel.text]];
 }
 
 - (IBAction)addressButtonPushed:(id)sender {
-    // Look up address
+    // Look up address in Maps. Enable navigation to restaurant.
     
     NSArray *coordinates = [self.addressButton.titleLabel.text componentsSeparatedByString:@","];
     
