@@ -43,7 +43,12 @@
     if ([addressWords[0] isEqualToString:@"Not available"]) {
         cell.addressLabel.text = [self.goodFoodData objectAtIndex:indexPath.row][@"coordinates"];
     } else {
-        cell.addressLabel.text = [NSString stringWithFormat:@" %@,\n%@,%@", addressWords[0], addressWords[1], addressWords[2]];
+        if (addressWords.count == 3) {
+            cell.addressLabel.text = [NSString stringWithFormat:@" %@,\n%@,%@", addressWords[0], addressWords[1], addressWords[2]];
+        } else if (addressWords.count == 2) {
+            cell.addressLabel.text = [NSString stringWithFormat:@" %@,%@", addressWords[0], addressWords[1]];
+        }
+
     }
     
     
@@ -112,7 +117,7 @@
     // Google Places rating (if available)
     if ([self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] != (id)[NSNull null]) {
         [cell.googlePlacesRatingButton setTitle:[self.goodFoodData objectAtIndex:indexPath.row][@"google_places_url"]  forState:UIControlStateNormal];
-        cell.googlePlacesRating.text = [[self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"] stringValue];
+        cell.googlePlacesRating.text = [NSString stringWithFormat:@"%@", [self.goodFoodData objectAtIndex:indexPath.row][@"google_rating"]];
     }
 
     // Total Yelp reviews
