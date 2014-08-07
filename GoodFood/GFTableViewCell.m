@@ -49,8 +49,6 @@
     item.name = self.nameLabel.text;
     [item openInMapsWithLaunchOptions:nil];
     
-    
-    NSLog(@"coordinates: %@", coordinates);
 }
 
 
@@ -58,8 +56,6 @@
     // Call Phone number
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.phoneButton.titleLabel.text]]];
-
-    NSLog(@"button phone #: %@", self.phoneButton.titleLabel.text);
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

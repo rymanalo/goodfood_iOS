@@ -46,8 +46,6 @@
         NSString *longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         NSString *latitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         
-        NSLog(@"long: %@, lat: %@", longitude, latitude);
-        
         
         // Accessing GoodFood API
         NSString *strURL = [NSString stringWithFormat:@"http://goodfoodwdi.herokuapp.com/results.json?lat=%@&lng=%@", latitude, longitude]; // change screen value
@@ -55,8 +53,6 @@
         
         _loading.hidden = NO;
         _goodFoodButton.hidden = YES;
-        
-        
 
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -66,15 +62,11 @@
             
             self.goodFoodData = responseObject;
             
-            
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
-            
             GFTableViewController *tableView = (GFTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"table"];
             
             
             [tableView setGoodFoodData:self.goodFoodData];
-            
             
             [self.navigationController pushViewController:tableView animated:YES];
             
@@ -86,22 +78,22 @@
     [locationManager stopUpdatingLocation];
     
     // Reverse Geocoding
-    NSLog(@"Resolving the Address");
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        if (error == nil && [placemarks count] > 0) {
-            placemark = [placemarks lastObject];
-            NSString *address = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-                                 placemark.subThoroughfare, placemark.thoroughfare,
-                                 placemark.postalCode, placemark.locality,
-                                 placemark.administrativeArea,
-                                 placemark.country];
-            
-            NSLog(@"address: %@", address);
-        } else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    } ];
+//    NSLog(@"Resolving the Address");
+//    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+//        if (error == nil && [placemarks count] > 0) {
+//            placemark = [placemarks lastObject];
+//            NSString *address = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+//                                 placemark.subThoroughfare, placemark.thoroughfare,
+//                                 placemark.postalCode, placemark.locality,
+//                                 placemark.administrativeArea,
+//                                 placemark.country];
+//            
+//            NSLog(@"address: %@", address);
+//        } else {
+//            NSLog(@"%@", error.debugDescription);
+//        }
+//    } ];
     
 }
 

@@ -160,7 +160,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"was able to load the data %@", self.goodFoodData);
+    NSLog(@"passed data: %@", self.goodFoodData);
     // Do any additional setup after loading the view.
     _goodFoodTable.delegate = self;
     _goodFoodTable.dataSource = self;
