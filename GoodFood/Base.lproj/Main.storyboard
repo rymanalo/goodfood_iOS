@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="1781" y="-12"/>
         </scene>
-        <!--View Controller - About-->
+        <!--About View Controller - About-->
         <scene sceneID="41e-wy-yhv">
             <objects>
-                <viewController title="About" id="S0b-kq-Tit" sceneMemberID="viewController">
+                <viewController title="About" id="S0b-kq-Tit" customClass="GFAboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fhq-CQ-sae"/>
                         <viewControllerLayoutGuide type="bottom" id="jwm-al-Nho"/>
@@ -142,6 +142,9 @@
                                 <state key="normal" title="Andris Lukjanovics">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailAndrisLukjanovics:" destination="S0b-kq-Tit" eventType="touchUpInside" id="hmn-tg-Ykz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-OF-2B4">
                                 <rect key="frame" x="15" y="280" width="87" height="20"/>
@@ -149,6 +152,9 @@
                                 <state key="normal" title="Phil DiNuzzo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailPhilDiNuzzo:" destination="S0b-kq-Tit" eventType="touchUpInside" id="7WS-b7-rxe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-7a-s4V">
                                 <rect key="frame" x="15" y="370" width="90" height="20"/>
@@ -156,6 +162,9 @@
                                 <state key="normal" title="Ryan Manalo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailRyanManalo:" destination="S0b-kq-Tit" eventType="touchUpInside" id="rhO-tw-en3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-8e-zic">
                                 <rect key="frame" x="15" y="460" width="94" height="20"/>
@@ -163,6 +172,9 @@
                                 <state key="normal" title="Sherod Taylor">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailSherodTaylor:" destination="S0b-kq-Tit" eventType="touchUpInside" id="dq6-Y7-jO5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
