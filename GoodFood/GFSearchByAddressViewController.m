@@ -16,7 +16,7 @@
 @interface GFSearchByAddressViewController ()
 @property (nonatomic) NSArray *places;
 @property (strong, nonatomic) UIImageView *loading;
-
+@property (nonatomic) SPGooglePlacesAutocompleteQuery *query;
 @end
 
 @implementation GFSearchByAddressViewController
@@ -27,6 +27,8 @@
     static NSString *simpleTableIdentifier = @"searchResult";
     
     UITableViewCell *cell = [_searchResultsTable dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    cell.textLabel.hidden = YES;
+    cell.detailTextLabel.hidden = YES;
 //    if (cell == nil)
 //    {
 //        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"goodFoodTableCell" owner:self options:nil];
@@ -40,6 +42,9 @@
             cell.textLabel.text = addressString;
             cell.detailTextLabel.text = [NSString stringWithFormat:@"lat=%f&lng=%f", placemark.location.coordinate.latitude, placemark.location.coordinate.longitude];
             cell.detailTextLabel.alpha = 0;
+            
+            cell.textLabel.hidden = NO;
+            cell.detailTextLabel.hidden = NO;
         }
         
     }];
@@ -94,16 +99,22 @@
 
 
 - (IBAction)queryInput:(id)sender {
-    SPGooglePlacesAutocompleteQuery *query = [SPGooglePlacesAutocompleteQuery query];
-    query.input = _addressTextfield.text;
-    query.radius = 100.0;
-    query.language = @"en";
-    query.types = SPPlaceTypeGeocode;
+    _query = [SPGooglePlacesAutocompleteQuery query];
+    _query.input = _addressTextfield.text;
+    _query.radius = 100.0;
+    _query.language = @"en";
+    _query.types = SPPlaceTypeGeocode;
     
-    if (_addressTextfield.text.length > 5) {
-        [query fetchPlaces:^(NSArray *places, NSError *error) {
-            _places = [[NSArray alloc] initWithArray:places];
-            [_searchResultsTable reloadData];
+    int streetAddress = [_addressTextfield.text intValue];
+    
+    
+    if (_addressTextfield.text.length > [NSString stringWithFormat:@"%i", streetAddress].length + 2) {
+        [_query fetchPlaces:^(NSArray *places, NSError *error) {
+            if (places) {
+                _places = [[NSArray alloc] initWithArray:places];
+                [_searchResultsTable reloadData];
+            }
+
             
         }];
     }
@@ -127,8 +138,11 @@
     _searchResultsTable.dataSource = self;
     _searchResultsTable.scrollEnabled = YES;
     _searchResultsTable.backgroundColor = [UIColor colorWithRed:246.0/255.0f green:246.0/255.0f blue:246.0/255.0f alpha:1.0f];
+//    _searchResultsTable.hidden = YES;
     
     _addressTextfield.returnKeyType = UIReturnKeyDone;
+    _addressTextfield.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+
 
     
     NSURL *localUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"]];
