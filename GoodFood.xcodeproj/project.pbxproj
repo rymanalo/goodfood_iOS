@@ -10,6 +10,10 @@
 		830240D819835E6700D3C595 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830240D719835E6700D3C595 /* MapKit.framework */; };
 		8312ADDB19836D1F00882B09 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8312ADDA19836D1F00882B09 /* loading.gif */; };
 		8312ADDD1988B69000882B09 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8312ADDC1988B69000882B09 /* iAd.framework */; };
+		8347E6DE19A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347E6D719A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.m */; };
+		8347E6DF19A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347E6D919A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.m */; };
+		8347E6E019A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347E6DB19A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.m */; };
+		8347E6E119A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347E6DD19A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.m */; };
 		83B07C54199596270018FA62 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B07C53199596270018FA62 /* MessageUI.framework */; };
 		83B07C571995964E0018FA62 /* GFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B07C561995964E0018FA62 /* GFAboutViewController.m */; };
 		83C17D68196CBF1100F7ECB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C17D67196CBF1100F7ECB9 /* Foundation.framework */; };
@@ -48,6 +52,14 @@
 		830240D719835E6700D3C595 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8312ADDA19836D1F00882B09 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		8312ADDC1988B69000882B09 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		8347E6D619A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
+		8347E6D719A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
+		8347E6D819A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
+		8347E6D919A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteQuery.m; sourceTree = "<group>"; };
+		8347E6DA19A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteUtilities.h; sourceTree = "<group>"; };
+		8347E6DB19A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteUtilities.m; sourceTree = "<group>"; };
+		8347E6DC19A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesPlaceDetailQuery.h; sourceTree = "<group>"; };
+		8347E6DD19A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesPlaceDetailQuery.m; sourceTree = "<group>"; };
 		83B07C53199596270018FA62 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		83B07C551995964E0018FA62 /* GFAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFAboutViewController.h; sourceTree = "<group>"; };
 		83B07C561995964E0018FA62 /* GFAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFAboutViewController.m; sourceTree = "<group>"; };
@@ -108,6 +120,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8347E6E219A65DC200D85405 /* Google Places */ = {
+			isa = PBXGroup;
+			children = (
+				8347E6D619A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.h */,
+				8347E6D719A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.m */,
+				8347E6D819A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.h */,
+				8347E6D919A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.m */,
+				8347E6DA19A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.h */,
+				8347E6DB19A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.m */,
+				8347E6DC19A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.h */,
+				8347E6DD19A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.m */,
+			);
+			name = "Google Places";
+			sourceTree = "<group>";
+		};
 		83C17D5B196CBF1100F7ECB9 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +188,7 @@
 				83B07C561995964E0018FA62 /* GFAboutViewController.m */,
 				83C17D7F196CBF1200F7ECB9 /* Images.xcassets */,
 				8312ADDA19836D1F00882B09 /* loading.gif */,
+				8347E6E219A65DC200D85405 /* Google Places */,
 				83C17D6E196CBF1100F7ECB9 /* Supporting Files */,
 			);
 			path = GoodFood;
@@ -332,7 +360,11 @@
 			files = (
 				83C17D74196CBF1100F7ECB9 /* main.m in Sources */,
 				83C17D7E196CBF1100F7ECB9 /* GFViewController.m in Sources */,
+				8347E6DE19A65DBA00D85405 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 				83DF6931198211380060C8DB /* GFTableViewCell.m in Sources */,
+				8347E6E119A65DBA00D85405 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
+				8347E6DF19A65DBA00D85405 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
+				8347E6E019A65DBA00D85405 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
 				83C5941C196CFE2100244955 /* GFTableViewController.m in Sources */,
 				83C17D78196CBF1100F7ECB9 /* GFAppDelegate.m in Sources */,
 				83B07C571995964E0018FA62 /* GFAboutViewController.m in Sources */,
