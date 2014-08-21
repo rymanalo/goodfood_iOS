@@ -18,7 +18,7 @@
 @synthesize input, sensor, key, offset, location, radius, language, types, resultBlock;
 
 + (SPGooglePlacesAutocompleteQuery *)query {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init] ;
 }
 
 - (id)init {
@@ -39,14 +39,14 @@
     return [NSString stringWithFormat:@"Query URL: %@", [self googleURLString]];
 }
 
-- (void)dealloc {
-    [googleConnection release];
-    [responseData release];
-    [input release];
-    [key release];
-    [language release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [googleConnection release];
+//    [responseData release];
+//    [input release];
+//    [key release];
+//    [language release];
+//    [super dealloc];
+//}
 
 - (NSString *)googleURLString {
     NSMutableString *url = [NSMutableString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@&sensor=%@&key=%@",
@@ -70,17 +70,17 @@
     return url;
 }
 
-- (void)cleanup {
-    [googleConnection release];
-    [responseData release];
-    googleConnection = nil;
-    responseData = nil;
-    self.resultBlock = nil;
-}
+//- (void)cleanup {
+//    [googleConnection release];
+//    [responseData release];
+//    googleConnection = nil;
+//    responseData = nil;
+//    self.resultBlock = nil;
+//}
 
 - (void)cancelOutstandingRequests {
     [googleConnection cancel];
-    [self cleanup];
+//    [self cleanup];
 }
 
 - (void)fetchPlaces:(SPGooglePlacesAutocompleteResultBlock)block {
@@ -109,7 +109,7 @@
     if (self.resultBlock != nil) {
         self.resultBlock(nil, error);
     }
-    [self cleanup];
+//    [self cleanup];
 }
 
 - (void)succeedWithPlaces:(NSArray *)places {
@@ -120,7 +120,7 @@
     if (self.resultBlock != nil) {
         self.resultBlock(parsedPlaces, nil);
     }
-    [self cleanup];
+//    [self cleanup];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
